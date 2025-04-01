@@ -9,6 +9,7 @@ import { toast } from "@/components/ui/use-toast";
 
 interface KanbanViewProps {
   tasks: Task[];
+  onTasksUpdate?: (tasks: Task[]) => void;
 }
 
 interface KanbanColumn {
@@ -17,7 +18,7 @@ interface KanbanColumn {
   status: "To Do" | "In Progress" | "Done" | "Blocked";
 }
 
-const KanbanView = ({ tasks: initialTasks }: KanbanViewProps) => {
+const KanbanView = ({ tasks: initialTasks, onTasksUpdate }: KanbanViewProps) => {
   const [tasks, setTasks] = useState<Task[]>(initialTasks);
   
   const columns: KanbanColumn[] = [
@@ -70,6 +71,11 @@ const KanbanView = ({ tasks: initialTasks }: KanbanViewProps) => {
 
     // Update the tasks state
     setTasks(newTasks);
+    
+    // Call the onTasksUpdate callback if provided
+    if (onTasksUpdate) {
+      onTasksUpdate(newTasks);
+    }
 
     // Show a success notification
     toast({

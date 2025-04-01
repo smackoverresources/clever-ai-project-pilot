@@ -111,7 +111,7 @@ const ProjectDashboard = ({ project: initialProject }: ProjectDashboardProps) =>
         </div>
       </div>
       
-      {activeView === "kanban" && <KanbanView tasks={project.tasks} />}
+      {activeView === "kanban" && <KanbanView tasks={project.tasks} onTasksUpdate={handleTasksUpdate} />}
       {activeView === "calendar" && <CalendarView tasks={project.tasks} />}
       {activeView === "list" && <ListView tasks={project.tasks} />}
     </div>
