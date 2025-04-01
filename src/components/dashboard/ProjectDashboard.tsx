@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Project, Task } from "@/lib/dummy-data";
+import { Project } from "@/lib/dummy-data";
 import ProjectViewSelector from "./ProjectViewSelector";
 import KanbanView from "./KanbanView";
 import CalendarView from "./CalendarView";
@@ -13,7 +13,7 @@ interface ProjectDashboardProps {
 }
 
 const ProjectDashboard = ({ project: initialProject }: ProjectDashboardProps) => {
-  const [project, setProject] = useState<Project>(initialProject);
+  const [project] = useState<Project>(initialProject);
   const [activeView, setActiveView] = useState("kanban");
 
   // Calculate project metrics
@@ -27,14 +27,6 @@ const ProjectDashboard = ({ project: initialProject }: ProjectDashboardProps) =>
     const start = new Date(project.startDate).toLocaleDateString("en-US", { month: "short", day: "numeric" });
     const end = new Date(project.endDate).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
     return `${start} - ${end}`;
-  };
-
-  // Handle task updates from KanbanView
-  const handleTasksUpdate = (updatedTasks: Task[]) => {
-    setProject({
-      ...project,
-      tasks: updatedTasks
-    });
   };
 
   return (
@@ -111,7 +103,7 @@ const ProjectDashboard = ({ project: initialProject }: ProjectDashboardProps) =>
         </div>
       </div>
       
-      {activeView === "kanban" && <KanbanView tasks={project.tasks} onTasksUpdate={handleTasksUpdate} />}
+      {activeView === "kanban" && <KanbanView tasks={project.tasks} />}
       {activeView === "calendar" && <CalendarView tasks={project.tasks} />}
       {activeView === "list" && <ListView tasks={project.tasks} />}
     </div>
