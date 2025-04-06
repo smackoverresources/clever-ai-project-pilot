@@ -1,73 +1,77 @@
-# Welcome to your Lovable project
+# AI Project Pilot
 
-## Project info
+An intelligent project management web application designed to help teams plan, track, and optimize their projects using modern AI-assisted tools.
 
-**URL**: https://lovable.dev/projects/779fcb1b-2f33-4a09-a4f8-e9cfe43d7164
+## Features
 
-## How can I edit this code?
+- **Project Dashboard**
+  - Visualize key project metrics
+  - Track budget and timeline progress
+  - Monitor team utilization
 
-There are several ways of editing your application.
+- **Task Management**
+  - Multiple views (Kanban, List, Calendar)
+  - Task prioritization and status tracking
+  - Detailed task information
 
-**Use Lovable**
+- **AI Project Assistant**
+  - Conversational interface
+  - Real-time project guidance
+  - Strategic advice and insights
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/779fcb1b-2f33-4a09-a4f8-e9cfe43d7164) and start prompting.
+## Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+- React + TypeScript
+- Tailwind CSS
+- Shadcn/UI components
+- React Router
+- Radix UI primitives
 
-**Use your preferred IDE**
+## Getting Started
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/ai-project-pilot.git
+   cd ai-project-pilot
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Follow these steps:
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Project Structure
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/
+│   ├── assistant/     # AI Assistant components
+│   ├── dashboard/     # Dashboard components
+│   ├── layout/        # Layout components
+│   ├── tasks/         # Task management components
+│   └── ui/            # Reusable UI components
+├── lib/
+│   ├── mockData.ts    # Mock data for development
+│   ├── types.ts       # TypeScript type definitions
+│   └── utils.ts       # Utility functions
+└── App.tsx            # Main application component
 ```
 
-**Edit a file directly in GitHub**
+## Contributing
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/779fcb1b-2f33-4a09-a4f8-e9cfe43d7164) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes it is!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
